@@ -12,9 +12,18 @@ const getById = (id) => {
   /*
   SELECT * 
   FROM [Accounts]
-  WHERE id = {id}
+  WHERE id = '{id}' limit 1
   */
   return db("accounts").where("id", id).first(); // first: array'in ilk objesi
+}
+
+const getByName = (name) => {
+  /*
+  SELECT * 
+  FROM [Accounts]
+  WHERE name = '{name}' limit 1
+  */
+  return db("accounts").where("name", name).first(); // first: array'in ilk objesi
 }
 
 const create = async (account) => {
@@ -37,4 +46,5 @@ module.exports = {
   create,
   updateById,
   deleteById,
+  getByName
 }

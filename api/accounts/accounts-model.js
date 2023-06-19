@@ -1,5 +1,13 @@
+const db = require('../../data/db-config')
+
 const getAll = () => {
-  // KODLAR BURAYA
+
+  /*
+  SELECT * 
+  FROM [Accounts]
+  */
+
+  return db("accounts"); 
 }
 
 const getById = id => {

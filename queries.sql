@@ -26,12 +26,12 @@ WHERE City = "Paris" OR City = "Madrid" OR Country = "Brazil"
 
 -- "The Shire" için bir müşteri kaydı ekleyin, ilgili kişi adı "Bilbo Baggins", adres - "Bag End" içinde "1 Hobbit-Hole", posta kodu "111" ve ülke "Middle Earth"
 
-INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+INSERT INTO [Customers] (CustomerName, ContactName, Address, City, PostalCode, Country)
 VALUES ("The Shire", "Bilbo Baggins", "Bag End", "1 Hobbit-Hole", "111" , "Middle Earth");
 
 -- Posta kodu "11122" olarak değişecek şekilde Bilbo Baggins kaydını güncelleyin
 
-UPDATE Customers
+UPDATE [Customers]
 SET PostalCode = "11122"
 WHERE ContactName = "Bilbo Baggins"
 
@@ -44,4 +44,4 @@ FROM [Customers]
 
 SELECT * 
 FROM [Suppliers] 
-WHERE Length(SupplierName) > 20
+WHERE LENGTH(SupplierName) > 20

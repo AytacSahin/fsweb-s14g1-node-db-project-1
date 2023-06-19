@@ -6,6 +6,7 @@ exports.checkAccountId = async (req, res, next) => {
     if (!isExistID) {
       res.status(400).json({ message: "account not found" });
     } else {
+      req.existUserID = isExistID
       next();
     }
   } catch (error) {

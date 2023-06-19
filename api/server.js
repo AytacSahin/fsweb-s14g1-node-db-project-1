@@ -7,8 +7,8 @@ server.use(express.json());
 
 server.use("/api/accounts", accountRouter);
 
-router.use((err, req, res, next) => { // eslint-disable-line
-    // KODLAR BURAYA
-  })
+server.use((err, req, res, next) => { // eslint-disable-line
+    res.status((err.status || 500)).json({ message: "SERVER ERROR, PLEASE TRY AGAIN LATER" })
+})
 
 module.exports = server;

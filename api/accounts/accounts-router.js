@@ -32,14 +32,14 @@ router.post('/', mw.checkAccountPayload, mw.checkAccountNameUnique, async (req, 
   }
 })
 
-router.put('/:id', mw.checkAccountId, mw.checkAccountPayload, async (req, res, next) => {
+router.put('/:id', mw.checkAccountId, mw.checkAccountPayload, mw.checkAccountNameUnique, async (req, res, next) => {
   try {
     const updatePost = {
       name: req.body.name,
       budget: req.body.budget
     }
-    const updatedAcc = await accountsModel.update(req.params.id, updatePost);
-    res.status(201).json(updatedAcc)
+    const updatedAcc = await accountsModel.updateById(req.params.id, updatePost);
+    res.status(200).json(updatedAcc)
   } catch (error) {
     next(error);
   }
